@@ -40,7 +40,10 @@ const SelectPanel = ({ route }) => {
                   }}
                 />
               </TouchableOpacity>
+
               <Text style={styles.titleWrapper}>Select {title}</Text>
+
+              {/* Refresh button */}
               <TouchableOpacity style={styles.refreshButtonWrapper}>
                 <Image
                   source={require("../assets/images/refreshIcon.png")}
@@ -48,7 +51,9 @@ const SelectPanel = ({ route }) => {
                 />
               </TouchableOpacity>
             </View>
+
             <LineSeparator marginTop={5} />
+
             {/* ------------------------------------------------------------ */}
             {/* Search Field */}
             <View style={styles.searchFieldWrapper}>
@@ -83,6 +88,10 @@ const SelectPanel = ({ route }) => {
                     height: 1,
                     backgroundColor: colors.blue_grotto,
                   },
+                }}
+                onPress={(data, details = null) => {
+                  console.log("\n\n[SelectPanel.js] Data: ", data);
+                  console.log("\n\n[SelectPanel.js] Detauls: ", details);
                 }}
               />
             </View>
