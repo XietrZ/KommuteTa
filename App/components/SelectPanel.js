@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import { Text, View, TouchableOpacity, Image, FlatList } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { Button, Icon, Input } from "@rneui/themed";
+import { Button, Icon } from "@rneui/themed";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 import { GOOGLE_MAPS_API_KEY } from "@env";
@@ -12,15 +13,17 @@ import colors from "../constants/Colors";
 const SelectPanel = ({ route }) => {
   const title = route.params.title;
   const navigation = useNavigation();
-  const data = [{ id: 1 }];
+  const viewData = [{ id: 1 }];
 
+  // eslint-disable-next-line eqeqeq
   console.log('[SelectPanel.js] title === "Origin":  ', title == "Origin");
   console.log("GOOGLE_MAPS_API_KEY: ", GOOGLE_MAPS_API_KEY);
 
   return (
     <View style={styles.container}>
       <FlatList
-        data={data}
+        data={viewData}
+        // eslint-disable-next-line no-unused-vars
         renderItem={({ item }) => (
           // --> ADD DESIGN HERE
           <View>
@@ -67,12 +70,15 @@ const SelectPanel = ({ route }) => {
 
               {/* search input */}
               <GooglePlacesAutocomplete
+                // eslint-disable-next-line eqeqeq
                 placeholder={title == "Origin" ? "Where From" : "Where To"}
                 nearbyPlacesAPI="GooglePlaceSearch"
                 debounce={400}
                 minLength={2}
                 query={{ key: GOOGLE_MAPS_API_KEY, language: "en" }}
+                // eslint-disable-next-line react/jsx-boolean-value
                 fetchDetails={true}
+                // eslint-disable-next-line react/jsx-curly-brace-presence
                 returnKeyType={"search"}
                 styles={{
                   textInput: {

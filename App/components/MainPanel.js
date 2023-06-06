@@ -20,6 +20,7 @@ const MainPanel = () => {
       <FlatList
         style={{ flex: 1 }}
         data={mainData}
+        // eslint-disable-next-line no-unused-vars
         renderItem={({ item }) => (
           // --> ADD DESIGN HERE
           <View>

@@ -12,9 +12,11 @@ const navigationSlice = createSlice({
   initialState,
   reducers: {
     setOrigin: (state, action) => {
+      // eslint-disable-next-line no-param-reassign
       state.origin = action.payload;
     },
     setDestination: (state, action) => {
+      // eslint-disable-next-line no-param-reassign
       state.destination = action.payload;
     },
   },

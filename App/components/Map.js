@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import MapView from "react-native-maps";
 import { View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import styles from "../stylesheets/Map.style";
 
